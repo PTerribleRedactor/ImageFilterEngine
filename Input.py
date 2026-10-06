@@ -7,8 +7,8 @@ from PIL import Image, UnidentifiedImageError
 from pydantic import BaseModel, Field, ValidationError, field_validator
 
 # Listes à définir plus tard
-LISTE_A = {"sepia", "blur", "grayscale"}       # filtres autorisés
-LISTE_B = {"multiply", "screen", "overlay"}    # blend modes autorisés
+LISTE_A = {"sepia", "blur", "grayscale"}     #filtre  
+LISTE_B = {"multiply", "screen", "overlay"}  #blend
 
 EXTENSIONS_OK = {".png", ".jpg", ".jpeg", ".gif", ".bmp", ".webp", ".tiff"}
 
@@ -16,7 +16,7 @@ class Layer(BaseModel):
     path_image: Path 
     filtre: str
     blend: str
-    opacity: float = Field(ge=0, le=1)         # entre 0 et 1 inclus
+    opacity: float = Field(ge=0, le=1)    
 
     @field_validator("path_image")
     @classmethod
@@ -31,7 +31,7 @@ class Layer(BaseModel):
             )
         try:
             with Image.open(p) as img:
-                img.verify()   # lève une exception si le fichier est corrompu
+                img.verify() 
         except (UnidentifiedImageError, OSError) as e:
             raise ValueError(f"le fichier n'est pas une image valide : {p} ({e})")
         return p
@@ -52,7 +52,7 @@ class Layer(BaseModel):
 
 
 class Document(BaseModel):
-    layers: list[Layer] = Field(min_length=1)  # au moins 1 image, sans maximum
+    layers: list[Layer] = Field(min_length=1)  
 
 
 

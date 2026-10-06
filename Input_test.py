@@ -8,6 +8,9 @@ Génère des fichiers .json (valides et invalides) puis vérifie que valider() :
 
 Les fichiers sont écrits dans  tests_json/valides  et  tests_json/invalides
 (vous pouvez les ouvrir et les modifier à la main).
+
+Ce fishier est fait Par IA pour just tester le code principale est s'assurer que tout 
+fonctionne proprement
 """
 import contextlib
 import io
