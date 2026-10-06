@@ -219,7 +219,7 @@ def Blend(photo1: np.ndarray, photo2: np.ndarray, alpha: float):
 """
 Parti test des filtres
 """
-
+"""
 def array_to_img(arr:np.ndarray):
     adjusted = np.array(np.clip(arr,0,1)*255,dtype = np.uint8)
     pil_img = Image.fromarray(adjusted)
@@ -234,10 +234,11 @@ def show_from_array(arr:np.ndarray):
     new_pil_im = array_to_img(bound_im)
     new_pil_im.show()
     input("Press Enter to continue")
-    
-
+"""   
+"""
 def main():
     im = array_from_file("C:/Users/tholl/Documents/createch/compsci/workshop2/cute energy.jpg")
     im = Gamma(im,3.4)
     show_from_array(im)
 main()
+"""
