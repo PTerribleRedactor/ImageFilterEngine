@@ -1,0 +1,10 @@
+{
+  "layers": [
+    {
+      "path_image": "stockage_image/absent.png",
+      "filtre": "x",
+      "blend": "y",
+      "opacity": 9
+    }
+  ]
+}

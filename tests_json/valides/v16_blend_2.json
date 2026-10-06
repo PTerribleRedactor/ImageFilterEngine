@@ -1,0 +1,10 @@
+{
+  "layers": [
+    {
+      "path_image": "stockage_image/sashimi.jpg",
+      "filtre": "blur",
+      "blend": "screen",
+      "opacity": 0.5
+    }
+  ]
+}

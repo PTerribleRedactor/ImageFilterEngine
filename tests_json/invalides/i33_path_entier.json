@@ -1,0 +1,10 @@
+{
+  "layers": [
+    {
+      "path_image": 123,
+      "filtre": "blur",
+      "blend": "multiply",
+      "opacity": 0.5
+    }
+  ]
+}
