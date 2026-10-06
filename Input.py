@@ -57,45 +57,39 @@ class Document(BaseModel):
 
 
 
-def lire_json(chemin: str) -> Document | None:
-    """Lit un fichier JSON et retourne son contenu."""
-    try:
-        with open(chemin, "r", encoding="utf-8") as f:
-            data : dict = json.load(f)
-        return valider(data) 
+def lire_json(chemin: str) -> dict:
+    """Lit le fichier. Lève FileNotFoundError ou json.JSONDecodeError."""
+    with open(chemin, "r", encoding="utf-8") as f:
+        return json.load(f)
 
 
-    except FileNotFoundError:
-        sys.exit(f"Fichier introuvable : {chemin}")
-    except json.JSONDecodeError as e:
-        sys.exit(f"JSON invalide : {e}")
-
-def valider(data: dict) -> Document | None: 
-    """Valider que le json respect les convention du program"""
-    try:
-        return Document.model_validate(data)
-    except ValidationError as e:
-        print(e)
-        return None
+def valider(data: dict) -> Document:
+    """Valide la structure. Lève pydantic.ValidationError si non conforme."""
+    return Document.model_validate(data)
 
 
-def url_bien_formee(url: str) -> bool:
-    try:
-        p = urlparse(url)
-        return p.scheme in ("http", "https") and bool(p.netloc)
-    except Exception:
-        return False
+def charger(chemin: str) -> Document:
+    """Lecture + validation, en une seule étape."""
+    return valider(lire_json(chemin))
 
-def traiter(data: dict) -> None:
-    """Votre logique métier ici."""
-    for cle, valeur in data.items():
-        print(cle, "->", valeur)
+
+def traiter(doc: Document) -> None:
+    for i, layer in enumerate(doc.layers):
+        print(i, layer.path_image, layer.filtre, layer.blend, layer.opacity)
 
 
 def main() -> None:
     if len(sys.argv) < 2:
         sys.exit("Usage : python script.py fichier.json")
 
-    data = lire_json(sys.argv[1])
-    traiter(data)
+    try:
+        doc = charger(sys.argv[1])
+    except FileNotFoundError:
+        sys.exit(f"Fichier introuvable : {sys.argv[1]}")
+    except json.JSONDecodeError as e:
+        sys.exit(f"JSON invalide : {e}")
+    except ValidationError as e:
+        sys.exit(f"JSON non conforme :\n{e}")
+
+    traiter(doc)
 
