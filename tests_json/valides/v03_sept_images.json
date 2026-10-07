@@ -2,43 +2,71 @@
   "layers": [
     {
       "path_image": "stockage_image/Liam_sous_courbes.png",
-      "filtre": "blur",
+      "filtre": [
+        {
+          "filter_name": "BlackBorder"
+        }
+      ],
       "blend": "multiply",
       "opacity": 0.5
     },
     {
       "path_image": "stockage_image/Thomas_fait_de_la_guitare.jpg",
-      "filtre": "blur",
+      "filtre": [
+        {
+          "filter_name": "BlackBorder"
+        }
+      ],
       "blend": "multiply",
       "opacity": 0.5
     },
     {
       "path_image": "stockage_image/sashimi.jpg",
-      "filtre": "blur",
+      "filtre": [
+        {
+          "filter_name": "BlackBorder"
+        }
+      ],
       "blend": "multiply",
       "opacity": 0.5
     },
     {
       "path_image": "stockage_image/razer_rgb.jpg",
-      "filtre": "blur",
+      "filtre": [
+        {
+          "filter_name": "BlackBorder"
+        }
+      ],
       "blend": "multiply",
       "opacity": 0.5
     },
     {
       "path_image": "stockage_image/coming_out_de_thomas.jpg",
-      "filtre": "blur",
+      "filtre": [
+        {
+          "filter_name": "BlackBorder"
+        }
+      ],
       "blend": "multiply",
       "opacity": 0.5
     },
     {
       "path_image": "stockage_image/Lulu1.png",
-      "filtre": "blur",
+      "filtre": [
+        {
+          "filter_name": "BlackBorder"
+        }
+      ],
       "blend": "multiply",
       "opacity": 0.5
     },
     {
       "path_image": "stockage_image/Lulu2.png",
-      "filtre": "blur",
+      "filtre": [
+        {
+          "filter_name": "BlackBorder"
+        }
+      ],
       "blend": "multiply",
       "opacity": 0.5
     }

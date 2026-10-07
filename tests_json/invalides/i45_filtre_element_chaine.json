@@ -1,0 +1,12 @@
+{
+  "layers": [
+    {
+      "path_image": "stockage_image/sashimi.jpg",
+      "filtre": [
+        "BlackBorder"
+      ],
+      "blend": "multiply",
+      "opacity": 0.5
+    }
+  ]
+}

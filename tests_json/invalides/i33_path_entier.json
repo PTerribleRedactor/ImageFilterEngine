@@ -2,7 +2,11 @@
   "layers": [
     {
       "path_image": 123,
-      "filtre": "blur",
+      "filtre": [
+        {
+          "filter_name": "BlackBorder"
+        }
+      ],
       "blend": "multiply",
       "opacity": 0.5
     }

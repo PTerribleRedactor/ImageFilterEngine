@@ -4,7 +4,11 @@
       "path_image": [
         "a.png"
       ],
-      "filtre": "blur",
+      "filtre": [
+        {
+          "filter_name": "BlackBorder"
+        }
+      ],
       "blend": "multiply",
       "opacity": 0.5
     }
