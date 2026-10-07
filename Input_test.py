@@ -19,7 +19,7 @@ import shutil
 import sys
 from pathlib import Path
 
-from Input import LISTE_A, LISTE_B, Document, charger 
+from Input import FILTRE, BLEND, Document, charger 
 
 RACINE = Path(__file__).parent
 DOSSIER_IMAGES = "stockage_image"
@@ -28,8 +28,8 @@ VALIDES = SORTIE / "valides"
 INVALIDES = SORTIE / "invalides"
 FIXTURES = SORTIE / "fixtures"
 
-FILTRE_OK = sorted(LISTE_A)[0]
-BLEND_OK = sorted(LISTE_B)[0]
+FILTRE_OK = sorted(FILTRE)[0]
+BLEND_OK = sorted(BLEND)[0]
 
 IMAGES = [
     "Liam_sous_courbes.png",
@@ -95,9 +95,9 @@ CAS_VALIDES = {
     "v14_image_jpg": doc(layer(path_image=img("razer_rgb.jpg"))),
 }
 # Une entrée par valeur de liste A et B
-for _i, _f in enumerate(sorted(LISTE_A)):
+for _i, _f in enumerate(sorted(FILTRE)):
     CAS_VALIDES[f"v15_filtre_{_i}"] = doc(layer(filtre=_f))
-for _i, _b in enumerate(sorted(LISTE_B)):
+for _i, _b in enumerate(sorted(BLEND)):
     CAS_VALIDES[f"v16_blend_{_i}"] = doc(layer(blend=_b))
 
 

@@ -7,8 +7,8 @@ from PIL import Image, UnidentifiedImageError
 from pydantic import BaseModel, Field, ValidationError, field_validator
 
 # Listes à définir plus tard
-LISTE_A = {"sepia", "blur", "grayscale"}     #filtre  
-LISTE_B = {"multiply", "screen", "overlay"}  #blend
+FILTRE = {"sepia", "blur", "grayscale"}       
+BLEND = {"multiply", "screen", "overlay"}  
 
 EXTENSIONS_OK = {".png", ".jpg", ".jpeg", ".gif", ".bmp", ".webp", ".tiff"}
 
@@ -78,12 +78,13 @@ def traiter(doc: Document) -> None:
         print(i, layer.path_image, layer.filtre, layer.blend, layer.opacity)
 
 
-def main() -> None:
+def Load_Image_JSON() -> Document | None:
     if len(sys.argv) < 2:
         sys.exit("Usage : python script.py fichier.json")
 
     try:
         doc = charger(sys.argv[1])
+        return Document
     except FileNotFoundError:
         sys.exit(f"Fichier introuvable : {sys.argv[1]}")
     except json.JSONDecodeError as e:
@@ -91,5 +92,5 @@ def main() -> None:
     except ValidationError as e:
         sys.exit(f"JSON non conforme :\n{e}")
 
-    traiter(doc)
+    #traiter(doc) 
 
