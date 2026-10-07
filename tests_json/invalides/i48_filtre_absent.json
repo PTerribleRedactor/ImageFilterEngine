@@ -1,0 +1,9 @@
+{
+  "layers": [
+    {
+      "path_image": "stockage_image/sashimi.jpg",
+      "blend": "multiply",
+      "opacity": 0.5
+    }
+  ]
+}

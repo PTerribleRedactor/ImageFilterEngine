@@ -1,0 +1,22 @@
+{
+  "layers": [
+    {
+      "path_image": "stockage_image/sashimi.jpg",
+      "filtre": "x",
+      "blend": "multiply",
+      "opacity": 0.5
+    },
+    {
+      "path_image": "stockage_image/sashimi.jpg",
+      "filtre": "blur",
+      "blend": "multiply",
+      "opacity": 0.5
+    },
+    {
+      "path_image": "stockage_image/sashimi.jpg",
+      "filtre": "blur",
+      "blend": "y",
+      "opacity": 0.5
+    }
+  ]
+}

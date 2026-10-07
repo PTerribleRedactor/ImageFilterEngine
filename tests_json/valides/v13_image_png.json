@@ -1,0 +1,10 @@
+{
+  "layers": [
+    {
+      "path_image": "stockage_image/Lulu2.png",
+      "filtre": "blur",
+      "blend": "multiply",
+      "opacity": 0.5
+    }
+  ]
+}

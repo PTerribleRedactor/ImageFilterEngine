@@ -1,0 +1,10 @@
+{
+  "layers": [
+    {
+      "path_image": "stockage_image/razer_rgb.jpg",
+      "filtre": "blur",
+      "blend": "multiply",
+      "opacity": 0.5
+    }
+  ]
+}

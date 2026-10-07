@@ -1,0 +1,10 @@
+{
+  "layers": [
+    {
+      "path_image": "tests_json/fixtures/corrompu.png",
+      "filtre": "blur",
+      "blend": "multiply",
+      "opacity": 0.5
+    }
+  ]
+}
