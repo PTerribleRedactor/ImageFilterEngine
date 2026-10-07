@@ -1,0 +1,30 @@
+{
+  "layers": [
+    {
+      "path_image": "stockage_image/sashimi.jpg",
+      "filtre": [
+        {
+          "filter_name": "BlackBorder"
+        },
+        {
+          "filter_name": "Warm"
+        },
+        {
+          "filter_name": "BlackBorder"
+        }
+      ],
+      "blend": "multiply",
+      "opacity": 0.5
+    },
+    {
+      "path_image": "stockage_image/Lulu1.png",
+      "filtre": [
+        {
+          "filter_name": "Warm"
+        }
+      ],
+      "blend": "multiply",
+      "opacity": 0.5
+    }
+  ]
+}

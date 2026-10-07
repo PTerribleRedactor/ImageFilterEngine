@@ -1,23 +1,25 @@
-from Input import Load_Image_JSON, FILTRE, BLEND 
+from Input import Load_Image_JSON, Document 
+from Filter import FILTRE   
+#from Blend import BLEND 
 from PIL import Image 
 import numpy as np 
 
 
 def charger_image(chemin) -> np.ndarray:
     with Image.open(chemin) as im:
-        return np.asarray(im.convert("RGB"), dtype=np.float32) / 255.0   # valeurs 0..1
+        return np.asarray(im.convert("RGB"), dtype=np.float32) / 255.0  
 
 def charger_image(chemin) -> np.ndarray:
     with Image.open(chemin) as im:
-        return np.asarray(im.convert("RGB"), dtype=np.float32) / 255.0   # valeurs 0..1
+        return np.asarray(im.convert("RGB"), dtype=np.float32) / 255.0   
 
 def appliquer(doc: Document) -> np.ndarray:
     resultat = None
     for layer in doc.layers:
         for filters in doc.layers.filter:
-            calque += FILTRES[layer.filtre](charger_image(layer.path_image))
+            calque += FILTRE[layer.filtre](charger_image(layer.path_image))
         
-        melange = BLENDS[layer.blend](resultat, calque)
+        melange = BLEND[layer.blend](resultat, calque)
         resultat = (1 - layer.opacity) * resultat + layer.opacity * melange
 
     return resultat
