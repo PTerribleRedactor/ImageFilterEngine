@@ -1,4 +1,5 @@
-from Input import Load_Image_JSON, FILTRE, BLEND 
+from Input import Load_Image_JSON
+from Filter import FILTRE   
 from PIL import Image 
 import numpy as np 
 

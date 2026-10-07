@@ -1,6 +1,33 @@
 from PIL import Image
 import numpy as np
 
+FILTRE = {
+    "GrayScale" : GrayScale, 
+    "BlackWhiteFilter" : BlackWhiteFilter, 
+    "Warm" : Warm,
+    "Cool" : Cool,
+    "InvertedBlueGreen" : InvertedBlueGreen,
+    "InvertedRedBlue" : InvertedRedBlue,
+    "InvertedGreenRed" : InvertedGreenRed,
+    "ColorFilter" : ColorFilter,
+    "ColorBoost" : ColorBoost,
+    "Negative" : Negative,
+    "Posterize" : Posterize,
+    "Brightness" : Brightness,
+    "Darkness" : Darkness,
+    "Contrast" : Contrast,
+    "BlackBorder" : BlackBorder,
+    "Sepia" : Sepia,
+    "Blur" : Blur,
+    "Noisefilter" : Noisefilter,
+    "Sharpen" : Sharpen,
+    "Emboss" : Emboss,
+    "Vignette" : Vignette,
+    "Pixelate" : Pixelate,
+    "Solarize" : Solarize,
+    "Gamma" : Gamma
+}  
+
 R = 0
 B = 1
 G = 2

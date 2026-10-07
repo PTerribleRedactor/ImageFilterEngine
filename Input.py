@@ -5,9 +5,9 @@ from urllib.parse import urlparse
 
 from PIL import Image, UnidentifiedImageError
 from pydantic import BaseModel, Field, ValidationError, field_validator
+from Filter import FILTRE 
 
-# Listes à définir plus tard
-FILTRE = {"sepia", "blur", "grayscale"}       
+# Listes à définir plus tard     
 BLEND = {"multiply", "screen", "overlay"}  
 
 EXTENSIONS_OK = {".png", ".jpg", ".jpeg", ".gif", ".bmp", ".webp", ".tiff"}
