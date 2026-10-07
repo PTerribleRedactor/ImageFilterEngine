@@ -64,7 +64,6 @@ def ImageReshape(photo1: np.ndarray, photo2: np.ndarray,
     h1, w1 = photo1.shape[:2]
     h2, w2 = photo2.shape[:2]
 
-    # Cadre final (x_min, y_min, x_max, y_max) dans le repère de photo1
     if mode == "intersection":
         x_min, y_min = max(0, x2), max(0, y2)
         x_max, y_max = min(w1, x2 + w2), min(h1, y2 + h2)
@@ -86,7 +85,6 @@ def ImageReshape(photo1: np.ndarray, photo2: np.ndarray,
     result1 = np.zeros((H, W, 4), dtype=dtype)
     result2 = np.zeros((H, W, 4), dtype=dtype)
 
-    # On décale tout par rapport à l'origine du cadre final
     _paste(result1, photo1, -x_min, -y_min)
     _paste(result2, photo2, x2 - x_min, y2 - y_min)
 
