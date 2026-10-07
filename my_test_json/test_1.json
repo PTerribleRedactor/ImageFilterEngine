@@ -1,0 +1,27 @@
+{
+  "layers": [
+    {
+      "path_image": "stockage_image/sashimi.jpg",
+      "filtre": [
+        {
+          "filter_name": "Pixelate",
+          "filter_param":{
+            "size" : 80 
+          }
+        }
+      ],
+      "blend": "DifferenceBlend",
+      "opacity": 1
+    },
+    {
+        "path_image" : "stockage_image/coming_out_de_thomas.jpg",
+        "filtre" : [
+            {
+                "filter_name" : "Sepia"
+            }
+        ],
+        "blend" : "DifferenceBlend",
+        "opacity" : 0.5
+    }
+  ]
+}

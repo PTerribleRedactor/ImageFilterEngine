@@ -55,3 +55,12 @@ def OverlayBlend(photo1: np.ndarray, photo2: np.ndarray):
 
 def DifferenceBlend(photo1: np.ndarray, photo2: np.ndarray):
     return np.abs(photo1-photo2)
+
+BLEND = {
+    "ImageReshape" : ImageReshape,
+    "NormalBlend" : NormalBlend,
+    "MultiplyBlend" : MultiplyBlend,
+    "LighterBlend" : LighterBlend,
+    "OverlayBlend" : OverlayBlend, 
+    "DifferenceBlend" : DifferenceBlend 
+}
