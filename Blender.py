@@ -112,11 +112,6 @@ def OverlayBlend(photo1: np.ndarray, photo2: np.ndarray):
     return result
 
 def DifferenceBlend(photo1: np.ndarray, photo2: np.ndarray):
-    def split(img):
-        if img.shape[2] == 4:
-            return img[..., :3], img[..., 3:4]
-        return img, np.ones(img.shape[:2] + (1,), dtype=img.dtype)
-
     c1, a1 = split(photo1)
     c2, a2 = split(photo2)
 
@@ -128,3 +123,22 @@ def DifferenceBlend(photo1: np.ndarray, photo2: np.ndarray):
     if photo1.shape[2] == 3 and photo2.shape[2] == 3:
         return rgb
     return np.concatenate((rgb, alpha), axis=2)
+
+  def split(img):
+    if img.shape[2] == 4:
+        return img[..., :3], img[..., 3:4]
+    return img, np.ones(img.shape[:2] + (1,), dtype=img.dtype)
+  
+BLEND = {
+    "ImageReshape" : ImageReshape,
+    "NormalBlend" : NormalBlend,
+    "MultiplyBlend" : MultiplyBlend,
+    "LighterBlend" : LighterBlend,
+    "OverlayBlend" : OverlayBlend, 
+    "DifferenceBlend" : DifferenceBlend 
+}
+    
+    
+  
+  
+

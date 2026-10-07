@@ -8,9 +8,9 @@ from typing import Any
 from PIL import Image, UnidentifiedImageError
 from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator, model_validator
 from Filter import FILTRE 
+from Blender import BLEND 
 
 # Listes à définir plus tard     
-BLEND = {"multiply", "screen", "overlay"}  
 List_FILTRE = set(FILTRE)
 List_BLEND = set(BLEND)
 
@@ -21,7 +21,7 @@ class FilterSpec(BaseModel):
     model_config = ConfigDict(extra="ignore")
 
     filter_name: str
-    filter_params: dict[str, float] = Field(default_factory=dict)
+    filter_params: dict[str, Any] = Field(default_factory=dict)
 
     @field_validator("filter_name")
     @classmethod
@@ -103,7 +103,7 @@ def Load_Image_JSON() -> Document | None:
 
     try:
         doc = charger(sys.argv[1])
-        return Document
+        return doc 
     except FileNotFoundError:
         sys.exit(f"Fichier introuvable : {sys.argv[1]}")
     except json.JSONDecodeError as e:
