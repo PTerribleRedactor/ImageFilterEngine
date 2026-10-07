@@ -124,7 +124,7 @@ def DifferenceBlend(photo1: np.ndarray, photo2: np.ndarray):
         return rgb
     return np.concatenate((rgb, alpha), axis=2)
 
-  def split(img):
+def split(img):
     if img.shape[2] == 4:
         return img[..., :3], img[..., 3:4]
     return img, np.ones(img.shape[:2] + (1,), dtype=img.dtype)

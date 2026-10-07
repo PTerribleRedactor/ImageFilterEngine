@@ -168,7 +168,7 @@ def main():
         return
 
     print("Format commun :", r_fond.shape)
-    im = NormalBlend(r_fond, r_insert, 0.7)
+    im = DifferenceBlend(r_fond, r_insert)
     show_from_array(im)
 
 
