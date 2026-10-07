@@ -211,6 +211,35 @@ def Gamma(photo: np.ndarray, gamma: float):
     photo[:, :, :] = np.clip(photo[:, :, :] ** gamma,0,1)
     return photo
 
+
+
+FILTRE = {
+    "GrayScale" : GrayScale, 
+    "BlackWhiteFilter" : BlackWhiteFilter, 
+    "Warm" : Warm,
+    "Cool" : Cool,
+    "InvertedBlueGreen" : InvertedBlueGreen,
+    "InvertedRedBlue" : InvertedRedBlue,
+    "InvertedGreenRed" : InvertedGreenRed,
+    "ColorFilter" : ColorFilter,
+    "ColorBoost" : ColorBoost,
+    "Negative" : Negative,
+    "Posterize" : Posterize,
+    "Brightness" : Brightness,
+    "Darkness" : Darkness,
+    "Contrast" : Contrast,
+    "BlackBorder" : BlackBorder,
+    "Sepia" : Sepia,
+    "Blur" : Blur,
+    "Noisefilter" : Noisefilter,
+    "Sharpen" : Sharpen,
+    "Emboss" : Emboss,
+    "Vignette" : Vignette,
+    "Pixelate" : Pixelate,
+    "Solarize" : Solarize,
+    "Gamma" : Gamma
+}  
+
 """
 def Blend(photo1: np.ndarray, photo2: np.ndarray, alpha: float):
     return (1 - alpha) * photo1 + alpha * photo2

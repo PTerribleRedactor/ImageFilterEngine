@@ -1,0 +1,13 @@
+{
+  "layers": [
+    {
+      "filtre": [
+        {
+          "filter_name": "BlackBorder"
+        }
+      ],
+      "blend": "multiply",
+      "opacity": 0.5
+    }
+  ]
+}

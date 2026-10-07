@@ -1,0 +1,14 @@
+{
+  "layers": [
+    {
+      "path_image": "stockage_image/razer_rgb.jpg",
+      "filtre": [
+        {
+          "filter_name": "BlackBorder"
+        }
+      ],
+      "blend": "multiply",
+      "opacity": 0.5
+    }
+  ]
+}
