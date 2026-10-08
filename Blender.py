@@ -128,7 +128,6 @@ def DifferenceBlend(photo1: np.ndarray, photo2: np.ndarray):
     if photo1.shape[2] == 3 and photo2.shape[2] == 3:
         return rgb
     return np.concatenate((rgb, alpha), axis=2)
-
   
 BLEND = {
     "ImageReshape" : ImageReshape,
