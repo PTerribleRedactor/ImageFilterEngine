@@ -494,12 +494,12 @@ class Filter:
             return None
 
     @staticmethod
-    def Apply(name: str, photo: np.ndarray, *args):
+    def Apply(name: str, photo: np.ndarray, *args, **kwargs):
         """Applique un filtre à partir de son nom : Filter.Apply("Sepia", photo)"""
         if name not in Filter.FILTRE:
             print(f"Apply error: unknown filter '{name}'")
             return None
-        return Filter.FILTRE[name](photo, *args)
+        return Filter.FILTRE[name](photo, *args, **kwargs)
 
 
 # Dictionnaire des filtres (défini après la classe pour pouvoir référencer les méthodes)

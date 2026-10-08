@@ -7,11 +7,11 @@ from typing import Any
 
 from PIL import Image, UnidentifiedImageError
 from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator, model_validator
-from Filter import FILTRE 
+from Filter import Filter   
 from Blender import BLEND 
 
-# Listes à définir plus tard     
-List_FILTRE = set(FILTRE)
+# Listes à définir plus tard  
+List_filter = set(Filter.FILTRE.keys())    
 List_BLEND = set(BLEND)
 
 EXTENSIONS_OK = {".png", ".jpg", ".jpeg", ".gif", ".bmp", ".webp", ".tiff"}
@@ -26,17 +26,19 @@ class FilterSpec(BaseModel):
     @field_validator("filter_name")
     @classmethod
     def verifier_nom(cls, v: str) -> str:
-        if v not in FILTRE:
-            raise ValueError(f"filtre '{v}' inconnu, valeurs permises : {sorted(FILTRE)}")
+        if v not in List_filter:
+            raise ValueError(f"filtre '{v}' inconnu, valeurs permises : {sorted(List_filter)}")
         return v
 
+    """
     @model_validator(mode="after")
     def verifier_params(self):
-        autorises = set(list(inspect.signature(FILTRE[self.filter_name]).parameters)[1:])
+        autorises = set(list(inspect.signature(List_filter[self.filter_name]).parameters)[1:])
         inconnus = set(self.filter_params) - autorises
         if inconnus:
             raise ValueError(f"paramètres inconnus : {sorted(inconnus)}, permis : {sorted(autorises)}")
         return self
+    """
 
 
 class Layer(BaseModel):
