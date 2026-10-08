@@ -1,5 +1,5 @@
 from Blender import *
-from Filter import *
+from Filter import Filter
 
 
 
@@ -156,8 +156,8 @@ def main():
     im2 = array_from_file("stockage_image/sashimi.jpg")
     h1, w1 = im1.shape[:2]
     im2 = resize_cover(im2, w1, h1)
-    im1 = Sepia(im1)
-    im2 = Pixelate(im2, 40)
+    im1 = Filter.Sepia(im1)
+    im2 = Filter.Pixelate(im2, 40)
     position = [0, 0]
     print(f"im1 : {w1}x{h1} px | im2 : {im2.shape[1]}x{im2.shape[0]} px | position : {position}")
 
