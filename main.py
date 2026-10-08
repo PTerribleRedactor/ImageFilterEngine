@@ -28,7 +28,7 @@ def appliquer(doc: Document) -> np.ndarray:
         for filtre in layer.filtre:
             nom = filtre.get("filter_name") if isinstance(filtre, dict) else filtre.filter_name
             params = filtre.get("filter_params", {}) if isinstance(filtre, dict) else getattr(filtre, "filter_params", {})
-
+            
             try:
                 calque = FILTRE[nom](calque, **params)
             except KeyError:
@@ -52,8 +52,6 @@ def appliquer(doc: Document) -> np.ndarray:
             melange = calque
 
         resultat = (1 - layer.opacity) * resultat + layer.opacity * melange
-
-        print(resultat.shape[:]) 
     return resultat
 
 def sauvegarder(arr: np.ndarray, chemin: str) -> None:
