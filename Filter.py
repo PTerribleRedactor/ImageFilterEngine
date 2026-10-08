@@ -3,7 +3,6 @@ import numpy as np
 
 
 class Filter:
-    # Indices des canaux (ordre RGB standard de PIL / numpy)
     R = 0
     G = 1
     B = 2
