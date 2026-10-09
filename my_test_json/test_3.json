@@ -1,0 +1,22 @@
+{
+  "layers": [
+    {
+      "path_image": "stockage_image/coming_out_de_thomas.jpg",
+      "filtre": [
+        {"filter_name": "centercirclefocus", "filter_params": {"intensity": 60, "focus_size": 50}},
+        {"filter_name": "brightness", "filter_params": {"level": 0.1}}
+      ],
+      "blend": "NormalBlend",
+      "opacity": 1
+    },
+    {
+      "path_image": "stockage_image/sashimi.jpg",
+      "filtre": [
+        {"filter_name": "saturation", "filter_params": {"intensity": 80}},
+        {"filter_name": "selectivecolor", "filter_params": {"color": [255, 0, 0], "intensity": 100}}
+      ],
+      "blend": "MultiplyBlend",
+      "opacity": 0.5
+    }
+  ]
+}

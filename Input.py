@@ -11,7 +11,8 @@ from Filter import Filter
 from Blender import BLEND 
 
 # Listes à définir plus tard  
-List_filter = set(Filter.FILTRE.keys())    
+from registre_filtres import REGISTRE
+List_filter = REGISTRE.noms()  
 List_BLEND = set(BLEND)
 
 EXTENSIONS_OK = {".png", ".jpg", ".jpeg", ".gif", ".bmp", ".webp", ".tiff"}

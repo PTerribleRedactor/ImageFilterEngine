@@ -1,5 +1,5 @@
 from Input import Load_Image_JSON, Document 
-from Filter import Filter  
+from registre_filtres import REGISTRE 
 from Blender import BLEND, resize_cover 
 from PIL import Image 
 import numpy as np 
@@ -18,7 +18,7 @@ def charger_image(chemin, h1:int, w1:int) -> np.ndarray:
 
 
 def appliquer(doc: Document) -> np.ndarray:
-    f = Filter()
+    
     resultat = None
     h1 = 0
     w1 = 0
@@ -31,9 +31,11 @@ def appliquer(doc: Document) -> np.ndarray:
             params = filtre.get("filter_params", {}) if isinstance(filtre, dict) else getattr(filtre, "filter_params", {})
             
             try:
-                calque = f.Apply(nom, calque, **params) 
+                calque = REGISTRE.apply(nom, calque, **params)
             except KeyError:
                 print(f"Filtre inconnu : '{nom}', ignoré.")
+            except ValueError as e:
+                print(f"Paramètres invalides pour le filtre '{nom}' : {e}. Filtre ignoré.")
             except TypeError as e:
                 print(f"Paramètres invalides pour le filtre '{nom}' : {e}. Filtre ignoré.")
 
